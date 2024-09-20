@@ -7,7 +7,7 @@ def adaptive_response(stimulus, threshold):
 
 
 def rate_based_model(
-    VF, T, R, w1=1, w2=0.6, w3=1, t1=0.5, t2=0.5, k=0.85, c=1
+    VF, T, R, w1=1, w2=0.6, w3=1, t1=0.5, t2=0.5, k=0.80, c=1
 ):
     """Predict fold change of the population response from the baseline"""
 
