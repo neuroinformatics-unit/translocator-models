@@ -4,8 +4,7 @@
 
 This repository contains scripts and modules used for modeling and analyzing fold changes in population firing rates in the visual cortex under various stimulus conditions. The scripts implement rate-based models, fitting procedures, and data visualization tools used in the accompanying research paper.
 
-
-### Create an environment and install dependencies
+## Usage
 
 Dependencies are declared in the pyproject.toml file. To create a virtual environment and install the dependencies, run the following commands:
 
@@ -14,8 +13,6 @@ conda create -n translocator-models python=3.11
 conda activate translocator-models
 pip install .
 ```
-
-### Usage
 
 To run the script that fits the model to the data and visualizes the results, use the following command:
 
