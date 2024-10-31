@@ -4,43 +4,6 @@
 
 This repository contains scripts and modules used for modeling and analyzing fold changes in population firing rates in the visual cortex under various stimulus conditions. The scripts implement rate-based models, fitting procedures, and data visualization tools used in the accompanying research paper.
 
-## Functions Overview
-
-- **Model Functions (`models.py`):**
-  - `adaptive_response`: Processes stimuli based on thresholds.
-  - `rate_based_model`: Computes fold changes using the rate-based model.
-  - `arithmetic_sum_model`: Predicts fold changes using the arithmetic sum model.
-
-- **Fitting Functions (`fitting_methods.py`):**
-  - `fit_fold_changes_to_data`: Fits the rate-based model to experimental data.
-  - `get_predicted_fold_changes_*`: Compute predicted fold changes for different datasets.
-
-- **Main Script Functions (`fit_the_model.py`):**
-  - `fit_and_print_results`: Fits the model to data, prints results, and computes arithmetic sum predictions if applicable.
-
-
-### Features
-
-- **Data Loading**
-
-  Loads mean fold changes from experimental datasets:
-
-  - `visual_flow`
-  - `passive_same_luminance`
-  - `matched_dataset`
-
-- **Model Fitting**
-
-  Fits the rate-based model to each dataset using the `fit_and_print_results` function, which:
-
-  - Fits the model to the data.
-  - Extracts and prints optimized parameters.
-  - Computes and prints predicted fold changes.
-  - Optionally computes predictions using the arithmetic sum model.
-
-- **Visualization**
-
-  Creates bar plots comparing experimental data with model predictions using `seaborn` and `matplotlib`.
 
 ### Create an environment and install dependencies
 
@@ -120,5 +83,29 @@ $$fc(VT) = \beta_0 + \beta_1 fc(T_{VS}) + \beta_2 fc(VF)$$
   - `fit_fold_changes_to_data`: Fits the rate-based model to experimental data.
   - `get_predicted_fold_changes_*`: Compute predicted fold changes for different datasets.
 
-- **Main Script Functions (`main_script.py`):**
+- **Main Script Functions (`fit_the_model.py`):**
   - `fit_and_print_results`: Fits the model to data, prints results, and computes arithmetic sum predictions if applicable.
+
+
+### Features
+
+- **Data Loading**
+
+  Loads mean fold changes from experimental datasets:
+
+  - `visual_flow`
+  - `passive_same_luminance`
+  - `matched_dataset`
+
+- **Model Fitting**
+
+  Fits the rate-based model to each dataset using the `fit_and_print_results` function, which:
+
+  - Fits the model to the data.
+  - Extracts and prints optimized parameters.
+  - Computes and prints predicted fold changes.
+  - Optionally computes predictions using the arithmetic sum model.
+
+- **Visualization**
+
+  Creates bar plots comparing experimental data with model predictions using `seaborn` and `matplotlib`.
