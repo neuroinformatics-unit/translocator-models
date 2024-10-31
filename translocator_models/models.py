@@ -33,7 +33,7 @@ def rate_based_model(
     w3: float = 1,
     t1: float = 0.5,
     t2: float = 0.5,
-    k: float = 0.85,
+    k: float = 0.80,
     c: float = 1,
 ) -> float:
     """
@@ -66,7 +66,7 @@ def rate_based_model(
     t2 : float, optional
         Threshold for T-R mismatch adaptive response. Default is 0.5.
     k : float, optional
-        Scaling factor for the response. Default is 0.85.
+        Scaling factor for the response. Default is 0.80.
     c : float, optional
         Constant offset for the response. Default is 1.
 
