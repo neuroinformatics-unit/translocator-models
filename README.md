@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This repository contains scripts and modules used for modeling and analyzing fold changes in population firing rates in the visual cortex under various stimulus conditions. The scripts implement rate-based models, fitting procedures, and data visualization tools used in the accompanying research paper.
+This repository contains scripts and modules used for modeling and analyzing fold changes in population firing rates in the visual cortex under various stimulus conditions. The scripts implement rate-based models, fitting procedures, and data visualization tools used in Velez-Fort 2024. If you have any questions, please open an issue.
 
 ## Usage
 
