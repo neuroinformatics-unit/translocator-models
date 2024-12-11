@@ -47,23 +47,35 @@ The rate-based model computes the fold change in population firing rate based on
 The model equations:
 
 $$v = w_1(VF > 0) + w_2 ((T-R) > 0)(T-R) + w_3R$$
-$$fc(v) = k v + c$$
+$$\hat fc(v) = \alpha v + c$$
 
 
 where:
+- $v$ is the neuron rate response above baseline in arbitrary units,
 - $w_1$, $w_2$, and $w_3$ are weights applied to each component of the response,
-- $k$ is a scaling factor, and $c$ is a constant offset.
+- $\alpha$ is a scaling factor, and $c$ is a constant offset.
 
 In this formulation:
 - The expressions $(VF > 0)$ and $((T - R) > 0)$ act as adaptive thresholds, activating their respective terms only if the stimulus exceeds a certain threshold.
 - The resulting value, $v$, represents the weighted, thresholded combination of these stimuli, and the final fold change $fc(v)$ scales and offsets this response.
 
+In the article we consider the following weights:
+- $w_1 = 1$
+- $w_2 = 0.6$
+- $w_3 = 1$
+- $\alpha = 0.8$
+- $c = 1$
+which simplifies the model equations to:
+$$v = (VF > 0) + 0.6((T-R) > 0)(T-R) + R$$
+$$\hat fc(v) = 0.8v + 1$$
+
+These weights can also be optimized to fit the model to the data, leading to a similar result.
 
 ### Arithmetic Sum Model
 
 The arithmetic sum model predicts the fold change by combining empirical fold changes using the formula:
 
-$$fc(VT) = \beta_0 + \beta_1 fc(T_{VS}) + \beta_2 fc(VF)$$
+$$\hat fc(VF + T) = \beta_0 + \beta_1 fc(T_{VS}) + \beta_2 fc(VF)$$
 
 - $fc(T_{VS})$ is the fold change from translation with constant luminance.
 - $fc(VF)$ is the fold change from visual flow.
@@ -82,27 +94,3 @@ $$fc(VT) = \beta_0 + \beta_1 fc(T_{VS}) + \beta_2 fc(VF)$$
 
 - **Main Script Functions (`fit_the_model.py`):**
   - `fit_and_print_results`: Fits the model to data, prints results, and computes arithmetic sum predictions if applicable.
-
-
-### Features
-
-- **Data Loading**
-
-  Loads mean fold changes from experimental datasets:
-
-  - `visual_flow`
-  - `passive_same_luminance`
-  - `matched_dataset`
-
-- **Model Fitting**
-
-  Fits the rate-based model to each dataset using the `fit_and_print_results` function, which:
-
-  - Fits the model to the data.
-  - Extracts and prints optimized parameters.
-  - Computes and prints predicted fold changes.
-  - Optionally computes predictions using the arithmetic sum model.
-
-- **Visualization**
-
-  Creates bar plots comparing experimental data with model predictions using `seaborn` and `matplotlib`.
