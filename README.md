@@ -57,7 +57,7 @@ where:
 
 In this formulation:
 - The expressions $(VF > 0)$ and $((T - R) > 0)$ act as adaptive thresholds, activating their respective terms only if the stimulus exceeds a certain threshold.
-- The resulting value, $v$, represents the weighted, thresholded combination of these stimuli, and the final fold change $fc(v)$ scales and offsets this response.
+- The resulting value, $v$, represents the weighted, thresholded combination of these stimuli, and the final fold change $\hat fc(v)$ scales and offsets this response.
 
 In the article we consider the following weights:
 - $w_1 = 1$
