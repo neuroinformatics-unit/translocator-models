@@ -66,6 +66,7 @@ In the article we consider the following weights:
 - $\alpha = 0.8$
 - $c = 1$
 which simplifies the model equations to:
+
 $$v = (VF > 0) + 0.6((T-R) > 0)(T-R) + R$$
 $$\hat fc(v) = 0.8v + 1$$
 
